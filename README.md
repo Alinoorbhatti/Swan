@@ -1,4 +1,6 @@
-# Swan 🦢
+<p align="center">
+  <img src="docs/logo.svg" alt="Swan — Agent Orchestration" width="380"/>
+</p>
 
 > Orchestrate swarms of AI agents and CLI tools from your terminal.
 
