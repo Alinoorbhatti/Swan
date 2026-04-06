@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swan"
+version = "0.1.0"
+description = "Orchestrate swarms of AI agents and CLI tools"
+requires-python = ">=3.12"
+dependencies = [
+    "typer[all]>=0.12",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+claude = ["anthropic>=0.25"]
+redis  = ["aioredis>=2.0"]
+docker = ["aiodocker>=0.21"]
+dev    = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+]
+
+[project.scripts]
+swan = "swan.cli.main:app"
+
+[project.entry-points."swan.plugins"]
+shell = "swan.plugins.builtin.shell:Plugin"
+http  = "swan.plugins.builtin.http:Plugin"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["swan*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
