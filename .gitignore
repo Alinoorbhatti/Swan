@@ -27,3 +27,15 @@ htmlcov/
 # OS
 .DS_Store
 Thumbs.db
+
+# Claude Code / AI tooling (local only)
+.claude/
+.superpowers/
+.mcp.json
+.opencode.json
+.cursorrules
+.windsurfrules
+
+# Secrets
+.env
+.env.*
